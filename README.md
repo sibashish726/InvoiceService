@@ -6,13 +6,13 @@ This project is a implementation of a Inoice system similar. It includes core fu
 ## Features Implemented
 
 1. **Invoice Creation**
-    - Create Invoice
+    - Create Invoice API
 
 2. **invoice management**
-    - Delete Invoice
-	- Update Invoice
-	- Show specific Invoice
-	- Show all invoices
+    - Delete Invoice API
+	- Update Invoice API
+	- Show specific Invoice API
+	- Show all invoices API
  
 
 ## Prerequisites
@@ -93,9 +93,9 @@ The system consists of the following database entities:
 6. **Singleton Pattern** – By default, all Spring Beans (classes marked with @Service, @RestController, or @Repository) are Singletons.
 
 ## Future Enhancements
-- Integrated Microservices Communication 
-- Implement payment gateway integration
-- Introduce role-based access control (RBAC)
+- Implement Microservices Communication 
+- Implement API gateway integration
+- Implement role-based access control (RBAC)
 - Implement caching for performance improvement
 - Implement pagination and Sorting
 - Implement Monitoringusing Spring Boot Actuator + Prometheus
