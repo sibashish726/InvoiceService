@@ -49,18 +49,6 @@ This project is a implementation of a Inoice system similar. It includes core fu
     "amount": 40000.50
   }
   ```
-- **Delete Invoice:**
-  ```http
-  DELETE /v1/deleteInvoiceById/{invoiceId}
-  ```
-- **Show specific invoice:**
-  ```http
-  GET /v1/invoice/getInvoiceById/{invoiceId}
-  ```
-- **Show all invoices:**
-  ```http
-  GET /v1/invoice/getAllInvoices
-  ```
 - **update Invoice:**
   ```http
   POST /v1/invoice/updateInvoice/{invoiceId}
@@ -74,4 +62,17 @@ This project is a implementation of a Inoice system similar. It includes core fu
     "amount": 45000.00
  }
   ```
+- **Delete Invoice:**
+  ```http
+  DELETE /v1/deleteInvoiceById/{invoiceId}
+  ```
+- **Show specific invoice:**
+  ```http
+  GET /v1/invoice/getInvoiceById/{invoiceId}
+  ```
+- **Show all invoices:**
+  ```http
+  GET /v1/invoice/getAllInvoices
+  ```
+
 
