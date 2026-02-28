@@ -84,14 +84,13 @@ The system consists of the following database entities:
 
 
 ## Design Patterns
-The current core functionalities implemented so far primarily follow the **MVC (Model-View-Controller) pattern** for structuring the application. Additionally, Spring Boot inherently follows the **Singleton pattern** for managing beans and services.
 
-1. **N-Tier (Layered) Architecture** – Controller $\rightarrow$ Service $\rightarrow$ Repository.
+1. **N-Tier (Layered) Architecture** – Controller -> Service -> Repository.
 2. **Inversion of Control (IoC)** – use of @RequiredArgsConstructor.
 3. **Data Transfer Object (DTO) Pattern** – Decouple the internal database entity (Invoice) from the API interface.).
 4. **Builder Pattern** – It makes your code much more readable..
 5. **Strategy Pattern (via Spring Data JPA)** – Use of Spring Data JPA provides the "how" (the SQL implementation) at runtime).
-6. **Singleton Pattern** – By default, all Spring Beans (classes marked with @Service, @RestController, or @Repository) are Singletons..
+6. **Singleton Pattern** – By default, all Spring Beans (classes marked with @Service, @RestController, or @Repository) are Singletons.
 
 ## Future Enhancements
 - Integrated Microservices Communication 
