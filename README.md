@@ -6,13 +6,13 @@ This project is a implementation of a Inoice system similar. It includes core fu
 ## Features Implemented
 
 1. **Invoice Creation**
-    - Create Invoice Api
+    - Create Invoice
 
 2. **invoice management**
     - Delete Invoice
 	- Update Invoice
 	- Show specific Invoice
-	- Show all invoice
+	- Show all invoices
  
 
 ## Prerequisites
@@ -36,7 +36,6 @@ This project is a implementation of a Inoice system similar. It includes core fu
 
 ## API Endpoints
 
-### 1. Invoice Creation
 - **Create Invoice:**
   ```http
   POST /v1/invoice/saveInvoice
@@ -50,8 +49,31 @@ This project is a implementation of a Inoice system similar. It includes core fu
     "amount": 40000.50
   }
   ```
-
-
+- **Delete Invoice:**
+  ```http
+  DELETE /v1/deleteInvoiceById/{invoiceId}
+  ```
+- **Show specific invoice:**
+  ```http
+  GET /v1/invoice/getInvoiceById/{invoiceId}
+  ```
+- **Show all invoices:**
+  ```http
+  GET /v1/invoice/getAllInvoices
+  ```
+- **update Invoice:**
+  ```http
+  POST /v1/invoice/updateInvoice/{invoiceId}
+  ```
+  **Request Body:**
+  ```json
+  {
+    "productId": 105,
+    "productDetails": "iPhone 15 Pro - Titanium (Updated)",
+    "quantity": 1,
+    "amount": 45000.00
+ }
+  ```
 
 ## Database Schema
 The system consists of the following database entities:
