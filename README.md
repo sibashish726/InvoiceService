@@ -75,6 +75,12 @@ This project is a implementation of a Inoice system similar. It includes core fu
  }
   ```
 
+
+
+
+
+
+
 ## Database Schema
 The system consists of the following database entities:
 - **Invoice**
