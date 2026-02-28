@@ -60,7 +60,7 @@ This project is a implementation of a Inoice system similar. It includes core fu
     "productDetails": "iPhone 15 Pro - Titanium (Updated)",
     "quantity": 1,
     "amount": 45000.00
- }
+  }
   ```
 - **Delete Invoice:**
   ```http
