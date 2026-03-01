@@ -83,14 +83,25 @@ public class InvoiceServiceImpl implements InvoiceService {
 	}
 	@Override
 	public void deleteInvoiceById(long invoiceId) {
-		log.info("Deleting invoice with id {} "+ invoiceId);
-		try {
-		  invoiceRepository.deleteById(invoiceId);
-		  log.info("Successfully deleted invoice with Id {}"+ invoiceId);
-		} catch (Exception e) {
-			log.info("Error deleting invoice with Id {}"+ e.getMessage());
-			throw new  CustomException("Invoice not found with id {} "+invoiceId ,"INVOICE_NOT_FOUND", 404) ;
-		}
+		log.info("Attempting to delete invoice with id: {}", invoiceId);
+
+	    Invoice invoice = invoiceRepository.findById(invoiceId)
+	        .orElseThrow(() -> {
+	            log.error("Delete failed: Invoice not found with id {}", invoiceId);
+	            return new CustomException(
+	                "Invoice not found with id " + invoiceId, 
+	                "INVOICE_NOT_FOUND", 
+	                404
+	            );
+	        });
+
+	    try {
+	        invoiceRepository.delete(invoice);
+	        log.info("Successfully deleted invoice with id: {}", invoiceId);
+	    } catch (Exception e) {
+	        log.error("Technical error occurred while deleting invoice id {}: {}", invoiceId, e.getMessage());
+	        throw new CustomException("Could not delete invoice due to internal error", "INTERNAL_ERROR", 500);
+	    }
 	}
 
 }
