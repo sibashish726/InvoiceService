@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.invoice.dto.InvoiceRequest;
 import com.example.invoice.dto.InvoiceResponse;
 import com.example.invoice.service.InvoiceService;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -59,6 +57,7 @@ public class InvoiceController {
 		invoiceService.updateInvoice(invoiceId,invoiceRequest);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
 	@DeleteMapping("/deleteInvoiceById/{invoiceId}")
 	public ResponseEntity<Void> deleteInvoiceById(@PathVariable long invoiceId){
 		invoiceService.deleteInvoiceById(invoiceId);

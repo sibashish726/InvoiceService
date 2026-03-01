@@ -23,6 +23,7 @@ import lombok.extern.log4j.Log4j2;
 public class InvoiceServiceImpl implements InvoiceService {
 
 	private final InvoiceRepository invoiceRepository;
+	
 	@Override
 	public long saveInvoice(InvoiceRequest invoiceRequest) {
 		log.info("Creating order..");
@@ -38,6 +39,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 	    log.info("New Invoice created with id {}"+ invoice.getId());
 		return invoice.getId();
 	}
+	
 	@Override
 	public List<InvoiceResponse> getAllInvoices() {
 		log.info("Fetching all orders from db");
@@ -52,6 +54,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 		log.info("Successfully fetched {} inoices"+ invoiceResponses.size());
 		return invoiceResponses;
 	}
+	
 	@Override
 	public InvoiceResponse getInvoiceById(long invoiceId) {
 		log.info("Invoice details with id {}"+ invoiceId);
@@ -68,6 +71,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 				                                        .build();
 		return invoiceResponse;
 	}
+	
 	@Override
 	public void updateInvoice(long invoiceId, InvoiceRequest invoiceRequest) {
 		log.info("updating invoice with id{} "+invoiceId );
@@ -81,6 +85,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 		invoiceRepository.save(invoice);
 		log.info("successfully updated invoice with id{} "+invoiceId );
 	}
+	
 	@Override
 	public void deleteInvoiceById(long invoiceId) {
 		log.info("Attempting to delete invoice with id: {}", invoiceId);
