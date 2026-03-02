@@ -98,7 +98,8 @@ The system consists of the following database entities:
 - Implement role-based access control (RBAC)
 - Implement caching for performance improvement
 - Implement pagination and Sorting
-- Implement Monitoringusing Spring Boot Actuator + Prometheus
+- Implement Monitoring using Spring Boot Actuator + Prometheus
+- Implement Kafka for streaming and notification
 
 
 
