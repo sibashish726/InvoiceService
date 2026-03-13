@@ -36,7 +36,7 @@ public class InvoiceController {
 	@PostMapping("/saveInvoice")
 	public ResponseEntity<Long> saveInvoice(@RequestBody InvoiceRequest invoiceRequest){
 		long invoiceId= invoiceService.saveInvoice(invoiceRequest);
-		log.info("Invoice created with id {} "+ invoiceId);
+		//log.info("Invoice created with id {} "+ invoiceId);
 		
 		return new ResponseEntity<>(invoiceId, HttpStatus.CREATED);
 		
