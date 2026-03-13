@@ -6,11 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.invoice.dto.InvoiceRequest;
 import com.example.invoice.dto.InvoiceResponse;
@@ -61,6 +63,36 @@ public class InvoiceController {
 	@DeleteMapping("/deleteInvoiceById/{invoiceId}")
 	public ResponseEntity<Void> deleteInvoiceById(@PathVariable long invoiceId){
 		invoiceService.deleteInvoiceById(invoiceId);
-		return null;
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
+	@GetMapping("/getInvoicesByStatus/{status}")
+	public ResponseEntity<List<InvoiceResponse>> getInvoicesByStatus(@PathVariable String status){
+		List<InvoiceResponse> invoiceResponses = invoiceService.getInvoicesByStatus(status);
+		return new ResponseEntity<>(invoiceResponses, HttpStatus.OK);
+	}
+
+	@GetMapping("/getInvoicesByProductId/{productId}")
+	public ResponseEntity<List<InvoiceResponse>> getInvoicesByProductId(@PathVariable String productId){
+		List<InvoiceResponse> invoiceResponses = invoiceService.getInvoicesByProductId(productId);
+		return new ResponseEntity<>(invoiceResponses, HttpStatus.OK);
+	}
+
+	@PatchMapping("/updateInvoiceStatus/{invoiceId}")
+	public ResponseEntity<Void> updateInvoiceStatus(@PathVariable long invoiceId, @RequestParam String status){
+		invoiceService.updateInvoiceStatus(invoiceId, status);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+
+	@GetMapping("/count")
+	public ResponseEntity<Long> getInvoiceCount(){
+		long count = invoiceService.getInvoiceCount();
+		return new ResponseEntity<>(count, HttpStatus.OK);
+	}
+
+	@DeleteMapping("/deleteAllInvoices")
+	public ResponseEntity<Void> deleteAllInvoices(){
+		invoiceService.deleteAllInvoices();
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }

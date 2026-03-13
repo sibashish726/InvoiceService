@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class InvoiceResponse {
     private long id;
     private long amount;
+    private long quantity;
     private String invoiceStatus;
     private Instant invoiceDate;
     private String productId;
