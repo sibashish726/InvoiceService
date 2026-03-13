@@ -67,8 +67,8 @@ This project is an implementation of an Invoice management system. It includes c
 4. **Access the H2 Database Console:**
    - URL: [http://localhost:8090/h2-console](http://localhost:8090/h2-console)
    - JDBC URL: `jdbc:h2:mem:inoice_db`
-   - Username: `sa`
-   - Password: `password`
+   - Username: Set your own username in application.properties 
+   - Password: Set your own password in application.properties 
 
 ## API Endpoints
 
